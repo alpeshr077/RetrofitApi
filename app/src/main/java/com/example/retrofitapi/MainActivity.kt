@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<CatModel>, response: Response<CatModel>) {
                 if (response.isSuccessful){
                     var data = response.body()
+
                     Glide.with(this@MainActivity).load(ApiClient.BASE_URI+data?.url).into(binding.imgImages)
                 }
             }
